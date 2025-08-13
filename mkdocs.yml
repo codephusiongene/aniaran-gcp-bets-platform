@@ -1,0 +1,20 @@
+site_name: GCP Betting Analytics Platform
+nav:
+- Home: index.md
+- About Greg: about_greg.md
+- Architecture:
+  - Overview: architecture.md
+  - Dataflow & Pipelines: pipelines.md
+  - Reporting: reporting.md
+  - Security: security.md
+- Talk to Your Data (RAG): rag_module.md
+- Operations:
+  - Runbook: runbook.md
+  - Composer & DQ: composer.md
+  - Integrations: integrations.md
+theme:
+  name: mkdocs
+markdown_extensions:
+- admonition
+- codehilite
+- tables

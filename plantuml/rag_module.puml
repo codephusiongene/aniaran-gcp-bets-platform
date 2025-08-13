@@ -1,0 +1,24 @@
+@startuml
+skinparam style strict
+skinparam rectangle { BorderColor #999; RoundCorner 8; FontSize 12 }
+skinparam packageStyle rectangle
+skinparam shadowing false
+
+actor "Analyst / Support" as User
+package "Talk to Your Data (RAG)" {
+  rectangle "Streamlit UI / Slack / Teams" as UI
+  rectangle "Cloud Run API\n(Flask)" as API
+  rectangle "Vertex AI\n(Embeddings + LLM)" as Vertex
+  rectangle "BigQuery\n(talk_data.docs_index vectors)" as BQvec
+  rectangle "GCS\n(Docs: rules, FAQs)" as GCS
+  rectangle "BigQuery\n(bets_dataset.live_bets)" as BQfacts
+}
+
+User --> UI
+UI --> API
+API --> Vertex : embed(query) + generate(answer)
+API --> BQvec : ANN / cosine search
+API --> BQfacts : aggregates (recent facts)
+GCS --> BQvec : indexed via ingest script
+
+@enduml

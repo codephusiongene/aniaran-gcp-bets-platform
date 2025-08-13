@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" />
+    </marker>
+    <style>
+      .box { fill:#f7f7f7; stroke:#444; rx:8; ry:8; }
+      .title { font-family:Arial; font-size:16px; font-weight:bold; }
+      .text { font-family:Arial; font-size:13px; }
+      .arrow { stroke:#444; stroke-width:2; fill:none; marker-end:url(#arrow); }
+    </style>
+  </defs>
+
+  <rect x="30" y="30" width="1140" height="640" fill="#eef5ff" stroke="#99b" />
+  <text x="40" y="55" class="title">GCP Real-Time Betting Analytics + Talk to Your Data</text>
+
+  <!-- Sources -->
+  <rect x="60" y="100" width="220" height="80" class="box"/>
+  <text x="70" y="125" class="title">Event Sources</text>
+  <text x="70" y="145" class="text">Betting App, Transactions</text>
+
+  <!-- Pub/Sub -->
+  <rect x="330" y="100" width="220" height="80" class="box"/>
+  <text x="340" y="125" class="title">Pub/Sub</text>
+  <text x="340" y="145" class="text">bets-topic</text>
+
+  <!-- Dataflow -->
+  <rect x="600" y="100" width="220" height="80" class="box"/>
+  <text x="610" y="125" class="title">Dataflow</text>
+  <text x="610" y="145" class="text">Streaming ETL + DLQ</text>
+
+  <!-- BigQuery -->
+  <rect x="870" y="90" width="250" height="120" class="box"/>
+  <text x="880" y="115" class="title">BigQuery</text>
+  <text x="880" y="135" class="text">bets_dataset.live_bets</text>
+  <text x="880" y="155" class="text">bets_dataset.bets_errors</text>
+
+  <!-- Looker / LS -->
+  <rect x="870" y="250" width="250" height="110" class="box"/>
+  <text x="880" y="275" class="title">Reporting</text>
+  <text x="880" y="295" class="text">Looker Studio / Looker</text>
+
+  <!-- Composer -->
+  <rect x="600" y="260" width="220" height="100" class="box"/>
+  <text x="610" y="285" class="title">Cloud Composer</text>
+  <text x="610" y="305" class="text">Snapshots + DQ + Alerts</text>
+
+  <!-- RAG -->
+  <rect x="60" y="260" width="490" height="220" class="box"/>
+  <text x="70" y="285" class="title">Talk to Your Data (RAG)</text>
+  <text x="70" y="305" class="text">GCS Docs → BigQuery Vectors → Vertex AI → Cloud Run API</text>
+  <text x="70" y="325" class="text">Slack/Teams bots + Streamlit UI</text>
+
+  <!-- Arrows -->
+  <line x1="280" y1="140" x2="330" y2="140" class="arrow"/>
+  <line x1="550" y1="140" x2="600" y2="140" class="arrow"/>
+  <line x1="820" y1="140" x2="870" y2="140" class="arrow"/>
+  <line x1="980" y1="210" x2="980" y2="250" class="arrow"/>
+  <line x1="710" y1="260" x2="710" y2="180" class="arrow"/>
+</svg>

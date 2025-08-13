@@ -1,0 +1,13 @@
+@startuml
+skinparam style strict
+skinparam rectangle { BorderColor #999; RoundCorner 8; FontSize 12 }
+skinparam shadowing false
+left to right direction
+
+rectangle "Vision & Alignment\nTranslate business needs into a clear roadmap" as A
+rectangle "Architecture & Governance First\nDefine layers & security before coding" as B
+rectangle "Modular, Portable Execution\nContainerized, CI/CD-enabled builds" as C
+rectangle "Ops-Ready Delivery\nMonitoring, DQ checks, cost controls" as D
+
+A --> B --> C --> D
+@enduml

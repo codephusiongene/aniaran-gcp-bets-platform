@@ -1,0 +1,33 @@
+@startuml
+skinparam style strict
+skinparam rectangle { BorderColor #999; RoundCorner 8; FontSize 12 }
+skinparam packageStyle rectangle
+skinparam shadowing false
+
+actor "Users (Marketing / Risk / BI)" as Users
+rectangle "Betting App / Event Sources" as Src
+
+package "GCP" {
+  rectangle "Pub/Sub
+(bets-topic)" as PubSub
+  rectangle "Dataflow (Apache Beam)
+Streaming ETL" as Dataflow
+  package "Analytics Storage" {
+    rectangle "BigQuery
+bets_dataset.live_bets" as BQ
+    rectangle "Cloud Storage (staging/temp)" as GCS
+  }
+  package "Reporting" {
+    rectangle "Looker Studio" as LS
+    rectangle "Looker (LookML)" as Looker
+  }
+}
+
+Src --> PubSub : JSON bet events
+PubSub --> Dataflow
+Dataflow --> BQ : append streaming rows
+BQ --> LS : direct query
+BQ --> Looker : semantic layer
+LS --> Users
+Looker --> Users
+@enduml

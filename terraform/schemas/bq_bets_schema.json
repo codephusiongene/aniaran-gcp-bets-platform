@@ -1,0 +1,80 @@
+[
+  {
+    "name": "event_ts",
+    "type": "TIMESTAMP",
+    "mode": "REQUIRED",
+    "description": "Event timestamp UTC"
+  },
+  {
+    "name": "bet_id",
+    "type": "STRING",
+    "mode": "REQUIRED",
+    "description": "Unique bet identifier"
+  },
+  {
+    "name": "user_id",
+    "type": "STRING",
+    "mode": "REQUIRED",
+    "description": "User identifier (pseudonymized)"
+  },
+  {
+    "name": "game_id",
+    "type": "STRING",
+    "mode": "REQUIRED",
+    "description": "Game or match identifier"
+  },
+  {
+    "name": "sport",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "Sport type (e.g., football)"
+  },
+  {
+    "name": "country",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "User country (ISO-2)"
+  },
+  {
+    "name": "channel",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "web|mobile|retail"
+  },
+  {
+    "name": "stake_amount",
+    "type": "NUMERIC",
+    "mode": "REQUIRED",
+    "description": "Stake currency amount"
+  },
+  {
+    "name": "odds",
+    "type": "FLOAT",
+    "mode": "REQUIRED",
+    "description": "Decimal odds"
+  },
+  {
+    "name": "payout",
+    "type": "NUMERIC",
+    "mode": "NULLABLE",
+    "description": "Expected payout (stake * odds)"
+  },
+  {
+    "name": "status",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "placed|settled|void"
+  },
+  {
+    "name": "ingest_id",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "Idempotency key for dedupe"
+  },
+  {
+    "name": "load_ts",
+    "type": "TIMESTAMP",
+    "mode": "NULLABLE",
+    "description": "Ingest load timestamp"
+  }
+]
