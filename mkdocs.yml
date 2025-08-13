@@ -18,3 +18,5 @@ markdown_extensions:
 - admonition
 - codehilite
 - tables
+
+site_url: https://codephusiongene.github.io/aniaran-gcp-bets-platform/
